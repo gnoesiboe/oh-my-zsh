@@ -1,10 +1,14 @@
 # AVIT ZSH Theme
+HR=$(printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -)
 
 PROMPT='
+
+
+${HR}
 $(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version)
 ▶ '
 
-PROMPT2='%{$fg[grey]%}◀%{$reset_color%} '
+PROMPT2='%{$fg[red]%}◀%{$reset_color%} '
 
 RPROMPT='$(_vi_status)%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_status) ${_return_status}%{$(echotc DO 1)%}'
 
